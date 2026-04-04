@@ -182,7 +182,7 @@ function injectColorButtons() {
     });
 
     // Insert below the nav bar (after the first table)
-    var nav = document.querySelector('table[width="100%"]');
+    var nav = document.querySelector('nav');
     if (nav && nav.parentNode) {
         nav.parentNode.insertBefore(switcher, nav.nextSibling);
     }
