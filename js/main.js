@@ -73,7 +73,10 @@ function calculateCareerTotals() {
     // Build and append the totals row
 
     var totalsRow = document.createElement('tr');
-    totalsRow.style.backgroundColor = '#FCB514';
+    var savedScheme = localStorage.getItem('colorScheme') || 'black';
+    var scheme = colorSchemes[savedScheme];
+    totalsRow.style.backgroundColor = scheme.accent;
+    totalsRow.style.color = scheme.navBg;
     totalsRow.innerHTML = '<td colspan="3" align="center"><b>Career Totals</b></td>'
         + '<td align="center"><b>' + totalGP + '</b></td>'
         + '<td align="center"><b>' + totalG + '</b></td>'
@@ -192,6 +195,13 @@ function applyColorScheme(schemeName) {
         statsCaption.style.backgroundColor = scheme.navBg;
         statsCaption.style.color = scheme.accent;
     }
+
+    // Update career totals row
+    var totalsRow = document.querySelector('#stats-table tr:last-child');
+    if (totalsRow && totalsRow.innerHTML.includes('Career Totals')) {
+        totalsRow.style.backgroundColor = scheme.accent;
+        totalsRow.style.color = scheme.navBg;
+}
 
     // Update form submit button
     var submitBtn = document.querySelector('.form-submit');
