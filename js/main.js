@@ -117,27 +117,40 @@ var colorSchemes = {
 function applyColorScheme(schemeName) {
     var scheme = colorSchemes[schemeName];
 
-    // Conditional: do nothing if scheme name is invalid
     if (!scheme) {
         return;
     }
 
-    // Apply to all font elements that use the gold accent color
+    // Update nav background
     var navEl = document.querySelector('nav');
     if (navEl) {
         navEl.style.backgroundColor = scheme.navBg;
     }
+
+    // Update all nav links
+    document.querySelectorAll('nav > a').forEach(function (el) {
+        el.style.color = scheme.navText;
+    });
+
+    // Keep active link in accent color
     document.querySelectorAll('nav > a.active').forEach(function (el) {
         el.style.color = scheme.accent;
     });
+
+    // Update section heading left borders
     document.querySelectorAll('.section h3').forEach(function (el) {
         el.style.borderLeftColor = scheme.accent;
     });
 
-    // Persist choice across page navigation
+    // Update hr borders
+    document.querySelectorAll('hr').forEach(function (el) {
+        el.style.borderTopColor = scheme.accent;
+    });
+
+    // Persist choice
     localStorage.setItem('colorScheme', schemeName);
 
-    // Update active button styling
+    // Update active button outline
     document.querySelectorAll('.color-btn').forEach(function (btn) {
         btn.style.outline = btn.dataset.scheme === schemeName
             ? '3px solid ' + scheme.accent
