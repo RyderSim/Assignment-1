@@ -21,10 +21,10 @@ function showWelcomeNotification() {
         'z-index: 1000'
     ].join(';');
 
-    banner.innerHTML = '&#127947; Welcome to Hunter Sim\'s offical player profile page!'
+    banner.innerHTML = '&#127947; Welcome to Hunter Sim\'s official player profile page!'
         + ' &nbsp;|&nbsp; Ottawa Valley Titans #7'
         + ' <span id="close-banner" style="position:absolute; right: 14px; top:50%;'
-        + ' transform:translateY(-50%); cusor:pointer; font-size:18px; font-weight:bold;">'
+        + ' transform:translateY(-50%); cursor:pointer; font-size:18px; font-weight:bold;">'
         + '&times;</span>'
 
     // Insert at the very top of the body
@@ -109,7 +109,7 @@ var colorSchemes = {
         navBg:   '#1a1a1a',
         navText: '#FCB514',
         accent:  '#FFD966',
-        label:   'Dark Gold)'
+        label:   'Dark Gold'
     }
 
 };
@@ -142,7 +142,7 @@ function applyColorScheme(schemeName) {
 function injectColorButtons() {
     // Create the color switcher container
     var switcher = document.createElement('div');
-    switcher.id = 'color-swither';
+    switcher.id = 'color-switcher';
     switcher.style.cssText = [
         'background-color: #111111',
         'padding: 6px 12px',
@@ -215,7 +215,7 @@ function highlightActiveNav() {
         currentPage = 'index.html';
     }
 
-    var navLinks = document.querySelectorAll('table[width="100%"] a');
+    var navLinks = document.querySelectorAll('nav > a');
 
     navLinks.forEach(function (link) {
         var href = link.getAttribute('href');

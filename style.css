@@ -1,0 +1,729 @@
+/* ============================================================
+   style.css  —  Hunter Sim Fan Website  (Assignment 3)
+   Author : Ryder Sim  B01059936
+   ============================================================
+ 
+   SELECTOR REFERENCE (Part 2 requirement):
+   -----------------------------------------
+   Universal Selector    (*)              — line 28
+   Multiple Selector     (h1, h2, h3)     — line 34
+   Child Selector        (nav > a)        — line 111
+   Sibling Selector      (h3 ~ p)         — line 251
+   Adjacent Sibling      (label + input)  — line 344
+   Attribute Selector    (a[target])      — line 136
+   Pseudo-element        (a::after)       — line 139
+   ============================================================ */
+ 
+ 
+/* ============================================================
+   UNIVERSAL SELECTOR — resets margin/padding/box-sizing
+   ============================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+/* ============================================================
+   MULTIPLE SELECTOR — shared heading styles
+   ============================================================ */
+h1, h2, h3 {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: #000000;
+}
+ 
+/* ============================================================
+   BASE / BODY
+   ============================================================ */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFFFFF;
+    color: #000000;
+    line-height: 1.6;
+}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+nav {
+    background-color:#000000;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav .nav-logo img {
+    width: 50px;
+    height: 50px;
+    display: block;
+}
+ 
+nav .nav-brand {
+    color: #FFFFFF;
+    font-size: 1.2em;
+    font-weight: bold;
+    flex: 1;
+}
+ 
+/* CHILD SELECTOR — only direct <a> children of <nav> */
+nav > a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95em;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: color 0.2s;
+}
+ 
+nav > a:hover {
+    color: #FCB514;
+}
+ 
+nav > a.active {
+    color: #FCB514;
+}
+ 
+/* ATTRIBUTE SELECTOR — external links (open in new tab) */
+a[target="_blank"] {
+    color: #000000;
+    text-decoration: underline;
+    font-style: italic;
+}
+ 
+/* PSEUDO-ELEMENT — append an arrow icon after external links */
+a[target="_blank"]::after {
+    content: " ↗";
+    font-size: 0.8em;
+    color: #FCB514;
+}
+ 
+/* ============================================================
+   STYLED URLS / LINKS
+   ============================================================ */
+a {
+    color: #1a0dab;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+ 
+a:hover {
+    color: #FCB514;
+    text-decoration: underline;
+}
+ 
+a:visited {
+    color: #551a8b;
+}
+ 
+/* ============================================================
+   FOOTER LINKS — override visited/default for dark background
+   ============================================================ */
+footer a {
+    color: #FCB514;
+    text-decoration: none;
+}
+ 
+footer a:visited {
+    color: #FCB514;
+}
+ 
+footer a:hover {
+    text-decoration: underline;
+}
+ 
+/* ============================================================
+   HERO SECTION — flexbox
+   ============================================================ */
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 5%;
+    flex-wrap: wrap;
+}
+ 
+/* STYLED IMAGE 1 — hero player photo (border + padding + margin) */
+.hero-img {
+    width: 420px;
+    max-width: 100%;
+    height: auto;
+    border: 4px solid #FCB514;
+    padding: 6px;
+    margin: 10px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+ 
+.hero-info h1 {
+    font-size: 2.4em;
+    margin-bottom: 6px;
+}
+ 
+.hero-info .position {
+    color: #FCB514;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+ 
+.hero-info p {
+    font-size: 0.95em;
+    margin-bottom: 6px;
+}
+ 
+/* ============================================================
+   DIVIDER
+   ============================================================ */
+hr {
+    border: none;
+    border-top: 2px solid #FCB514;
+    margin: 10px 5%;
+}
+ 
+/* ============================================================
+   CAREER SUMMARY TABLE — index.html 
+   ============================================================ */
+.summary-table {
+    width: 90%;
+    margin: 24px auto;
+    border-collapse: collapse;
+    border: 2px solid #000000;
+}
+ 
+.summary-table thead tr {
+    background-color: #000000;
+}
+ 
+.summary-table thead td {
+    color: #FCB514;
+    font-weight: bold;
+    text-align: center;
+    padding: 12px;
+    font-size: 1em;
+    letter-spacing: 0.5px;
+}
+ 
+.summary-table .subheader td {
+    background-color: #FCB514;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.95em;
+}
+ 
+.summary-table .values td {
+    text-align: center;
+    padding: 14px;
+    font-size: 1.6em;
+    font-weight: bold;
+    background-color: #F5F5F5;
+}
+ 
+/* ============================================================
+   BIOGRAPHY SECTION
+   ============================================================ */
+.bio-section {
+    width: 90%;
+    margin: 24px auto;
+}
+ 
+.bio-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+}
+ 
+/* SIBLING SELECTOR — any <p> that is a general sibling of <h3> */
+h3 ~ p {
+    font-size: 0.95em;
+    color: #333333;
+    margin-top: 8px;
+}
+ 
+/* ============================================================
+   STYLED LISTS 
+   ============================================================ */
+ul {
+    list-style-type: disc;
+    padding-left: 24px;
+    margin: 12px 0;
+}
+ 
+ul li {
+    margin-bottom: 6px;
+    font-size: 0.95em;
+    color: #222222;
+}
+ 
+ol {
+    list-style-type: decimal;
+    padding-left: 24px;
+    margin: 12px 0;
+}
+ 
+ol li {
+    margin-bottom: 6px;
+    font-size: 0.95em;
+    color: #222222;
+}
+ 
+/* ============================================================
+   ACHIEVEMENTS GRID — index.html 
+   ============================================================ */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    width: 90%;
+    margin: 24px auto;
+}
+ 
+.achievement-card {
+    background-color: #000000;
+    color: #FFFFFF;
+    padding: 16px;
+    border-radius: 4px;
+    border-left: 4px solid #FCB514;
+}
+ 
+.achievement-card h4 {
+    color: #FCB514;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+ 
+.achievement-card p {
+    font-size: 1em;
+    font-weight: bold;
+}
+ 
+/* ============================================================
+   STATS TABLE — stats.html 
+   ============================================================ */
+.page-header {
+    width: 90%;
+    margin: 24px auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+ 
+.page-header h2 {
+    font-size: 1.8em;
+    margin-bottom: 4px;
+}
+ 
+.page-header .subtitle {
+    color: #555555;
+    font-size: 0.9em;
+}
+ 
+.page-header .ep-link {
+    text-align: center;
+    font-size: 0.85em;
+}
+ 
+.page-header .ep-link img {
+    width: 70px;
+    height: 70px;
+    display: block;
+    margin: 0 auto 4px;
+}
+ 
+#stats-table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border: 1px solid #cccccc;
+}
+ 
+#stats-table thead tr {
+    background-color: #000000;
+}
+ 
+#stats-table thead th {
+    color: #FCB514;
+    font-weight: bold;
+    padding: 10px 8px;
+    text-align: left;
+    font-size: 0.9em;
+}
+ 
+#stats-table thead th:nth-child(n+4) {
+    text-align: center;
+}
+ 
+#stats-table .stat-row td {
+    padding: 8px;
+    font-size: 0.9em;
+    border-bottom: 1px solid #eeeeee;
+}
+ 
+#stats-table .stat-row:nth-child(odd) {
+    background-color: #F5F5F5;
+}
+ 
+#stats-table .stat-row:hover {
+    background-color: #FFF8E1;
+}
+ 
+#stats-table .stat-row td:nth-child(n+4) {
+    text-align: center;
+}
+ 
+/* ============================================================
+   CONTACT FORM — stats.html
+   ============================================================ */
+.contact-section {
+    width: 90%;
+    margin: 30px auto;
+}
+ 
+.contact-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 16px;
+}
+ 
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 560px;
+}
+ 
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+ 
+.form-group label {
+    font-weight: bold;
+    font-size: 0.9em;
+    color: #333333;
+}
+ 
+/* ADJACENT SIBLING SELECTOR — input immediately after a label */
+label + input,
+label + select,
+label + textarea {
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 8px 10px;
+    font-size: 0.95em;
+    font-family: Arial, sans-serif;
+    width: 100%;
+    transition: border-color 0.2s;
+}
+ 
+label + input:focus,
+label + select:focus,
+label + textarea:focus {
+    outline: none;
+    border-color: #FCB514;
+    box-shadow: 0 0 0 2px rgba(252, 181, 20, 0.25);
+}
+ 
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+ 
+.form-submit {
+    background-color: #000000;
+    color: #FCB514;
+    border: none;
+    padding: 10px 24px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    align-self: flex-start;
+    transition: background-color 0.2s;
+}
+ 
+.form-submit:hover {
+    background-color: #FCB514;
+    color: #000000;
+}
+ 
+/* ============================================================
+   MEDIA PAGE — VIDEO GRID (flexbox)
+   ============================================================ */
+.video-grid {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto;
+}
+ 
+.video-item {
+    flex: 1;
+    min-width: 280px;
+    text-align: center;
+}
+ 
+.video-item video,
+.video-item iframe {
+    width: 100%;
+    max-width: 420px;
+    height: 236px;
+    border: none;
+}
+ 
+.video-item .vid-title {
+    font-weight: bold;
+    font-size: 0.95em;
+    margin-bottom: 4px;
+    display: block;
+}
+ 
+.video-item .vid-source {
+    color: #555555;
+    font-size: 0.85em;
+    font-style: italic;
+}
+ 
+.video-item .caption {
+    font-size: 0.82em;
+    color: #888888;
+    margin-top: 6px;
+}
+ 
+/* ============================================================
+   AUDIO SECTION
+   ============================================================ */
+.audio-section {
+    width: 90%;
+    margin: 0 auto;
+}
+ 
+.audio-section p {
+    margin: 4px 0;
+    font-size: 0.9em;
+    color: #555555;
+}
+ 
+audio {
+    margin: 10px 0;
+    width: 100%;
+    max-width: 400px;
+}
+ 
+/* ============================================================
+   PHOTO GALLERY — grid 
+   ============================================================ */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    width: 90%;
+    margin: 0 auto;
+}
+ 
+/* STYLED IMAGE 2 — gallery images (border + padding + margin) */
+.photo-gallery .photo-item {
+    text-align: center;
+    background-color: #F5F5F5;
+    padding: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+}
+ 
+.photo-gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    /* STYLED IMAGE 3 — specific gallery image styling */
+    border: 3px solid #000000;
+    padding: 4px;
+    margin-bottom: 8px;
+    display: block;
+}
+ 
+.photo-gallery .caption {
+    font-size: 0.85em;
+    font-weight: bold;
+    margin-top: 4px;
+}
+ 
+.photo-gallery .subcaption {
+    font-size: 0.8em;
+    color: #555555;
+}
+ 
+/* ============================================================
+   MORE LINKS SECTION
+   ============================================================ */
+.links-section {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 90%;
+    margin: 0 auto;
+}
+ 
+.links-list {
+    flex: 1;
+    line-height: 2.2;
+    font-size: 0.95em;
+}
+ 
+.back-to-profile {
+    text-align: center;
+    min-width: 200px;
+}
+ 
+.back-to-profile img {
+    width: 190px;
+    height: 130px;
+    object-fit: cover;
+    border: 2px solid #000000;
+    padding: 4px;
+    margin-bottom: 6px;
+    display: block;
+}
+ 
+.back-to-profile p {
+    font-size: 0.8em;
+    color: #888888;
+    font-style: italic;
+}
+ 
+/* ============================================================
+   SECTION WRAPPER — consistent spacing between all sections
+   ============================================================ */
+.section {
+    width: 90%;
+    margin: 28px auto;
+}
+ 
+.section h3 {
+    font-size: 1.2em;
+    margin-bottom: 16px;
+    border-left: 4px solid #FCB514;
+    padding-left: 10px;
+}
+ 
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+    background-color: #000000;
+    padding: 14px 20px;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 0.85em;
+    margin-top: 30px;
+}
+ 
+/* ============================================================
+   RESPONSIVE — TABLET
+   ============================================================ */
+@media (max-width: 768px) {
+ 
+    nav {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px 14px;
+    }
+ 
+    nav .nav-brand {
+        font-size: 1em;
+    }
+ 
+    .hero {
+        flex-direction: column;
+        padding: 24px 5%;
+        text-align: center;
+    }
+ 
+    .hero-img {
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+ 
+    .photo-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+ 
+    .achievements-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+ 
+    .video-grid {
+        flex-direction: column;
+    }
+ 
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+ 
+    #stats-table {
+        font-size: 0.82em;
+    }
+}
+ 
+/* ============================================================
+   RESPONSIVE — MOBILE
+   ============================================================ */
+@media (max-width: 480px) {
+ 
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+ 
+    nav .nav-brand {
+        font-size: 0.95em;
+    }
+ 
+    nav > a {
+        font-size: 0.88em;
+    }
+ 
+    .hero-info h1 {
+        font-size: 1.6em;
+    }
+ 
+    .hero-info .position {
+        font-size: 0.95em;
+    }
+ 
+    .photo-gallery {
+        grid-template-columns: 1fr;
+    }
+ 
+    .achievements-grid {
+        grid-template-columns: 1fr;
+    }
+ 
+    .summary-table .values td {
+        font-size: 1.2em;
+    }
+ 
+    .contact-form {
+        max-width: 100%;
+    }
+ 
+    .links-section {
+        flex-direction: column;
+    }
+ 
+    #stats-table {
+        font-size: 0.75em;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
