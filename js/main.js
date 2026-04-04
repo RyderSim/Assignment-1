@@ -279,27 +279,27 @@ function loadSavedColorScheme() {
 */
 
 function highlightActiveNav() {
-    // Get just the filename from the full path (e.g. "stats.html")
     var currentPage = window.location.pathname.split('/').pop();
 
-    // Conditional: treat empty string as index.html (root URL) precaution for error
     if (currentPage === '') {
         currentPage = 'index.html';
     }
+
+    // Get the current saved scheme so we use the right colors
+    var savedScheme = localStorage.getItem('colorScheme') || 'black';
+    var scheme = colorSchemes[savedScheme];
 
     var navLinks = document.querySelectorAll('nav > a');
 
     navLinks.forEach(function (link) {
         var href = link.getAttribute('href');
 
-        // Conditional: highlight if this link matches the current page
         if (href === currentPage) {
-            link.style.color = '#FCB514';
+            link.style.color = scheme.accent;
             link.style.fontWeight = 'bold';
         } else {
-            // Only reset links that point to internal pages
             if (href === 'index.html' || href === 'stats.html' || href === 'media.html') {
-                link.style.color = '#FFFFFF';
+                link.style.color = scheme.navText;
                 link.style.fontWeight = 'normal';
             }
         }
