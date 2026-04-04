@@ -147,6 +147,59 @@ function applyColorScheme(schemeName) {
         el.style.borderTopColor = scheme.accent;
     });
 
+    // Update achievement card accents
+    document.querySelectorAll('.achievement-card').forEach(function (el) {
+        el.style.borderLeftColor = scheme.accent;
+    });
+
+    document.querySelectorAll('.achievement-card h4').forEach(function (el) {
+        el.style.color = scheme.accent;
+    });
+
+    // Update hero image border
+    var heroImg = document.querySelector('.hero-img');
+    if (heroImg) {
+        heroImg.style.borderColor = scheme.accent;
+    }
+
+    // Update position text under player name
+    var position = document.querySelector('.hero-info .position');
+    if (position) {
+        position.style.color = scheme.accent;
+    }
+
+    // Update summary table caption and header
+    var summaryCaption = document.querySelector('.summary-table caption');
+    if (summaryCaption) {
+        summaryCaption.style.backgroundColor = scheme.navBg;
+        summaryCaption.style.color = scheme.accent;
+    }
+
+    var summaryHeader = document.querySelector('.summary-table thead tr');
+    if (summaryHeader) {
+        summaryHeader.style.backgroundColor = scheme.navBg;
+    }
+
+    // Update stats table header background and text
+    document.querySelectorAll('#stats-table thead th').forEach(function (el) {
+        el.style.backgroundColor = scheme.navBg;
+        el.style.color = scheme.accent;
+    });
+
+    // Update stats table caption
+    var statsCaption = document.querySelector('#stats-table caption');
+    if (statsCaption) {
+        statsCaption.style.backgroundColor = scheme.navBg;
+        statsCaption.style.color = scheme.accent;
+    }
+
+    // Update form submit button
+    var submitBtn = document.querySelector('.form-submit');
+    if (submitBtn) {
+        submitBtn.style.backgroundColor = scheme.navBg;
+        submitBtn.style.color = scheme.accent;
+    }
+
     // Persist choice
     localStorage.setItem('colorScheme', schemeName);
 
