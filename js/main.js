@@ -324,5 +324,16 @@ document.addEventListener('DOMContentLoaded', function () {
     injectColorButtons()         //3. Color Changer (inject buttons first)
     loadSavedColorScheme();      //.  then apply saved/default scheme
     highlightActiveNav();        //4. Event handler
+
+    // 5. Handle form submission
+    var contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thanks for your message! This is a static site so no data is sent.')
+            contactForm.reset();
+        });
+    }
 });
+
 
