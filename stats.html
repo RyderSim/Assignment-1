@@ -9,13 +9,13 @@
 <body>
 
 <!-- Navigation-->
-<nav>
+<nav aria-label="Main navigation">
     <a href="index.html" class="nav-logo">
         <img src="assets/images/logo.png" alt="Ottawa Valley Titans Logo">
     </a>
     <span class="nav-brand">Hunter Sim #7</span>
     <a href="index.html">Profile</a>
-    <a href="stats.html" class="active">Career Stats</a>
+    <a href="stats.html" class="active" aria-current="page">Career Stats</a>
     <a href="media.html">Media</a>
 </nav>
 
@@ -38,6 +38,7 @@
 
 <!-- Stats Table -->
 <table id="stats-table">
+    <caption>Hunter Sim career statistics by season</caption>
     <thead>
         <tr>
             <th>Season</th>
@@ -107,15 +108,16 @@
 <!-- Contact / Stats Request Form -->
 <!-- label + input : adjacent sibling selector in style.css applies here-->
 <div class="contact-section">
-    <h3>&#128140; Submit a Stats Correction or Question</h3>
-    <form class="contact-form" action="#" method="post">
+    <h3><span aria-hidden="true">&#128140;</span> Submit a Stats Correction or Question</h3>
+    <form class="contact-form" action="#" method="post" role="form" aria-labelledby="form-heading">
+        <p id="form-heading" class="sr-only">Stats correction and question submission form</p>
         <div class="form-group">
             <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" placeholder="e.g John Smith" required>
+            <input type="text" id="name" name="name" placeholder="e.g John Smith" required aria-required="true">
         </div>
         <div class="form-group">
             <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="e.g john@example.com" required>
+            <input type="email" id="email" name="email" placeholder="e.g john@example.com" required aria-required="true">
         </div>
         <div class="form-group">
             <label for="season">Season in Question</label>

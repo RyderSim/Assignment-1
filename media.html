@@ -9,14 +9,14 @@
 <body>
 
 <!-- Navigation-->
-<nav>
+<nav aria-label="Main navigation">
     <a href="index.html" class="nav-logo">
         <img src="assets/images/logo.png" alt="Ottawa Valley Titans Logo">
     </a>
     <span class="nav-brand">Hunter Sim #7</span>
     <a href="index.html">Profile</a>
     <a href="stats.html">Career Stats</a>
-    <a href="media.html" class="active">Media</a>
+    <a href="media.html" class="active" aria-current="page">Media</a>
 </nav>
 
 <!-- Page Header -->
@@ -31,13 +31,13 @@
 
 <!-- Video highlights (flexbox) -->
  <div class="section">
-    <h3>&#127909; Video Highlights</h3>
+    <h3><span aria-hidden="true">&#127909;</span> Video Highlights</h3>
     <div class="video-grid">
         <div class="video-item">
             <span class="vid-title">Hunter Sim - Thunderous Hit</span>
             <span class="vid-source">Local Video File</span>
             <br><br>
-            <video controls>
+            <video controls aria-label="Hunter Sim body check highlight video">
                 <source src="assets/video/hunter_sim_hit.mp4" type="video/mp4">
                 Your browser does not support the video tag. Please update your browser.
             </video>
@@ -63,11 +63,11 @@
 
  <!-- Audio Section -->
 <div class="section">
-    <h3>&#127911; Audio</h3>
+    <h3><span aria-hidden="true">&#127911;</span> Audio</h3>
     <div class="audio-section">
         <b>Drafted to Renfrew Timberwolves - Hunter Sim</b>
         <p><i>Audio clip from when Hunter Sim got drafted</i></p>
-        <audio controls>
+        <audio controls aria-label="Audio clip of Hunter Sim being drafted to the Renfrew Timberwolves">
             <source src="assets/audio/HunterDrafted.mp3" type="audio/mpeg">
             Your browser does not support the audio element. Please update your browser.
         </audio>
@@ -79,7 +79,7 @@
 
 <!-- Photo Gallery (CSS Grid) -->
  <div class="section">
-    <h3>&#128247; Photo Gallery</h3>
+    <h3><span aria-hidden="true">&#128247;</span> Photo Gallery</h3>
     <div class="photo-gallery">
         <div class="photo-item">
             <img src="assets/images/hunter_sim2.jpeg" alt="Hunter Sim drinking water after a tough shift">
@@ -101,7 +101,7 @@
 
 <!-- More Links -->
 <div class="section">
-    <h3>&#128279; More Links</h3>
+    <h3><span aria-hiddden="true">&#128279;</span> More Links</h3>
     <div class="links-section">
         <div class="links-list">
             &#8594; <a href="https://www.eliteprospects.com" target="_blank">EliteProspects - Player Database</a><br>

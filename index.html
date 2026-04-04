@@ -10,12 +10,12 @@
 
 <!-- Navigation-->
 
-<nav>
+<nav aria-label="Main navigation">
     <a href="index.html" class="nav-logo">
         <img src="assets/images/logo.png" alt="Ottawa Valley Titans Logo">
     </a>
     <span class="nav-brand">Hunter Sim #7</span>
-    <a href="index.html" class="active">Profile</a>
+    <a href="index.html" class="active" aria-current="page">Profile</a>
     <a href="stats.html">Career Stats</a>
     <a href="media.html">Media</a>
 </nav>
@@ -37,16 +37,15 @@
 
  <!-- Career Totals Summary Table -->
 <table class="summary-table">
+    <caption>Career Minor Hockey Regular Season Totals</caption>
     <thead>
-        <tr><td colspan="4">Career Minor Hockey Regular Season Totals</td></tr>
-    </thead>
-    <tbody>
-        <tr class="subheader">
-            <td>Games Played</td>
-            <td>Goals</td>
-            <td>Assists</td>
-            <td>Points</td>
+        <tr>
+            <th scope="col">Games Played</th>
+            <th scope="col">Goals</th>
+            <th scope="col">Assists</th>
+            <th scope="col">Points</th>
         </tr>
+    </thead>
         <tr class="values">
             <td>260</td>
             <td>99</td>
