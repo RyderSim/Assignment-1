@@ -123,9 +123,15 @@ function applyColorScheme(schemeName) {
     }
 
     // Apply to all font elements that use the gold accent color
-    var accentFonts = document.querySelectorAll('font[color="#FCB514"]');
-    accentFonts.forEach(function (el) {
+    var navEl = document.querySelector('nav');
+    if (navEl) {
+        navEl.style.backgroundColor = scheme.navBg;
+    }
+    document.querySelectorAll('nav > a.active').forEach(function (el) {
         el.style.color = scheme.accent;
+    });
+    document.querySelectorAll('.section h3').forEach(function (el) {
+        el.style.borderLeftColor = scheme.accent;
     });
 
     // Persist choice across page navigation
